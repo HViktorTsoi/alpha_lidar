@@ -126,7 +126,7 @@ The hex file of the firmware:
 
 To program the firmware onto the MCU, we need an [ST-LINK V2](https://www.st.com/en/development-tools/st-link-v2.html) programmer. Please refer to the programming process outlined in the[STM32CubeProgrammer user manual](https://www.st.com/resource/en/user_manual/um2237-stm32cubeprogrammer-software-description-stmicroelectronics.pdf).
 
-## Software setup guide (Constructing)
+## Software setup guide (Under construction)
 ### Run with docker (Recommanded)
 
 [//]: # (### Dependencies)
