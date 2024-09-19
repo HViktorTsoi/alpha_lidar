@@ -7,7 +7,7 @@
 
 ## Hardware setup guide
 
-### Bill of Materials
+### Bill of materials
 | Component                  | Quantity | Detail                               | Link                                                                            |
 |----------------------------|----------|--------------------------------------|---------------------------------------------------------------------------------|
 | **Sensors**                |          |                                      |                                                                                 |
@@ -38,7 +38,7 @@
 ### Mechanical components setup
 
 
-#### CAD Models:
+#### CAD models:
 - Assembly diagram (Preview with [Free CAD](https://www.freecad.org/) and [A2plus plugin](https://wiki.freecad.org/A2plus_Workbench) )
 
 [hardware/Mechanical/assembly.FCStd](hardware/Mechanical/assembly.FCStd)
@@ -57,7 +57,7 @@
 
 
 
-#### 3D printing Instructions
+#### 3D printing instructions
 
 
 Our CAD models are optimized for 3D printing to facilitate rapid prototyping and reproduction. 
