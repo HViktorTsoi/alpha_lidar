@@ -20,7 +20,7 @@
 | Stand                       | 1        | 3D printed part                      | [.step](hardware/Mechanical/stand.step)                      |
 | M3 x 10mm screws            | 7        | Hex Socket Cap                       | -                                                            |
 | M4 x 10mm screws            | 7        | Hex Socket Cap                       | -                                                            |
-| M4 x 25mm screws+nuts    yjn7 | 4        | Hex Socket Cap                       | -                                                            |
+| M4 x 25mm screws+nuts       | 4        | Hex Socket Cap                       | -                                                            |
 | W1/4-20 screws              | 1        | Hex Socket Cap                       | -                                                            |
 | **Electronic Parts**        | -        | -                                    | -                                                            |
 | Control board               | 1        | PCB                                  | [link](hardware/PCB/EasyEDA_PCB_control_board.json)          |
