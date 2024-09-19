@@ -8,28 +8,29 @@
 ## Hardware setup guide
 
 ### Bill of Materials
-| Component                     | Quantity | Detail                               | Link                                                         |
-|-------------------------------|----------|--------------------------------------|--------------------------------------------------------------|
-| **Sensors**                   | -        | -                                    | -                                                            |
-| Hesai Pandar XT-16 (*)        | 1        | LiDAR                                | [link](https://www.hesaitech.com/product_downloads/xt32-16/) |
-| Yesense YIS100                | 1        | IMU                                  | [link](https://www.yesense.com/YIS100)                       |
-| Robomaster GM6020             | 1        | Motor / Encoder                      | [link](https://www.robomaster.com/en-US)                     |
-| **Mechanical Parts**          | -        | -                                    | -                                                            |
-| Central mounting structure    | 1        | 3D printed part                      | [.step](hardware/Mechanical/center_mounting_structure.step)  |
-| Motor mounting base           | 1        | 3D printed part                      | [.step](hardware/Mechanical/motor_mounting_base.step)        |
-| Stand                         | 1        | 3D printed part                      | [.step](hardware/Mechanical/stand.step)                      |
-| M3 x 10mm screws              | 7        | Hex Socket Cap                       | -                                                            |
-| M4 x 10mm screws              | 7        | Hex Socket Cap                       | -                                                            |
+| Component                   | Quantity | Detail                               | Link                                                         |
+|-----------------------------|----------|--------------------------------------|--------------------------------------------------------------|
+| **Sensors**                 | -        | -                                    | -                                                            |
+| Hesai Pandar XT-16 (*)      | 1        | LiDAR                                | [link](https://www.hesaitech.com/product_downloads/xt32-16/) |
+| Yesense YIS100              | 1        | IMU                                  | [link](https://www.yesense.com/YIS100)                       |
+| Robomaster GM6020           | 1        | Motor / Encoder                      | [link](https://www.robomaster.com/en-US)                     |
+| **Mechanical Parts**        | -        | -                                    | -                                                            |
+| Central mounting structure  | 1        | 3D printed part                      | [.step](hardware/Mechanical/center_mounting_structure.step)  |
+| Motor mounting base         | 1        | 3D printed part                      | [.step](hardware/Mechanical/motor_mounting_base.step)        |
+| Stand                       | 1        | 3D printed part                      | [.step](hardware/Mechanical/stand.step)                      |
+| M3 x 10mm screws            | 7        | Hex Socket Cap                       | -                                                            |
+| M4 x 10mm screws            | 7        | Hex Socket Cap                       | -                                                            |
 | M4 x 25mm screws+nuts    yjn7 | 4        | Hex Socket Cap                       | -                                                            |
-| W1/4-20 screws                | 1        | Hex Socket Cap                       | -                                                            |
-| **Electronic Parts**          | -        | -                                    | -                                                            |
-| Control board                 | 1        | PCB                                  | [link](hardware/PCB/EasyEDA_PCB_control_board.json)          |
-| Host machine interface        | 1        | PCB                                  | [link](hardware/PCB/EasyEDA_PCB_host_machine_interface.json) |
-| 8-line Giga Ethernet cable    | 1        | Data transmission                    | -                                                            |
-| SP3232 Module                 | 1        | RS232-TTL conversion                 | [link](http://e.tb.cn/h.gJosLscFDzw8Mb8?tk=u5v037C8lvo)      |
-| TJA1050 CAN Module            | 1        | CAN controller                       | [link](http://e.tb.cn/h.gJRE7eLncdnfH2f?tk=bT1N37CR3JV)      |
-| RJ45 Socket                   | 3        | Control board x1, interface board x2 | [link](http://e.tb.cn/h.gJRwBsI2jhjfMgq?tk=Blwl37Cjqox)      |
-| XH2.54 Socket                 | 5        | 8pin x1, 4pin x2, 2pin x2            | [link](http://e.tb.cn/h.gJRx9rqzKRJdwGG?tk=2ZND37CQ6tV)      |
+| W1/4-20 screws              | 1        | Hex Socket Cap                       | -                                                            |
+| **Electronic Parts**        | -        | -                                    | -                                                            |
+| Control board               | 1        | PCB                                  | [link](hardware/PCB/EasyEDA_PCB_control_board.json)          |
+| Host machine interface      | 1        | PCB                                  | [link](hardware/PCB/EasyEDA_PCB_host_machine_interface.json) |
+| STM32F103C8                 | 1        | MCU                                  | [link](https://www.st.com/en/microcontrollers-microprocessors/stm32f103c8.html)      |
+| SP3232 Module               | 1        | RS232-TTL conversion                 | [link](http://e.tb.cn/h.gJosLscFDzw8Mb8?tk=u5v037C8lvo)      |
+| TJA1050 CAN Module          | 1        | CAN controller                       | [link](http://e.tb.cn/h.gJRE7eLncdnfH2f?tk=bT1N37CR3JV)      |
+| RJ45 Socket                 | 3        | Control board x1, interface board x2 | [link](http://e.tb.cn/h.gJRwBsI2jhjfMgq?tk=Blwl37Cjqox)      |
+| XH2.54 Socket               | 5        | 8pin x1, 4pin x2, 2pin x2            | [link](http://e.tb.cn/h.gJRx9rqzKRJdwGG?tk=2ZND37CQ6tV)      |
+| 8-line Giga Ethernet cable  | 1        | Data transmission                    | -                                                            |
 
 > (*) Or other LiDAR sensors, e.g., [Robosense RS16](https://www.robosense.ai/en) / [Livox MID360](https://www.livoxtech.com/) / [Livox Horizon](https://www.livoxtech.com/).
 ### Mechanical components setup
