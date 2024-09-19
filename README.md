@@ -25,10 +25,11 @@
 | **Electronic Parts**          | -        | -                                    | -                                                            |
 | Control board                 | 1        | PCB                                  | [link](hardware/PCB/EasyEDA_PCB_control_board.json)          |
 | Host machine interface        | 1        | PCB                                  | [link](hardware/PCB/EasyEDA_PCB_host_machine_interface.json) |
-| SP3232 Module                 | 1        | RS232-TTL conversion                 | [link](http://e.tb.cn/h.gJosLscFDzw8Mb8?tk=u5v037C8lvo) |
-| TJA1050 CAN Module            | 1        | CAN controller                       | [link](http://e.tb.cn/h.gJRE7eLncdnfH2f?tk=bT1N37CR3JV) |
-| RJ45 Socket                   | 3        | Control board x1, interface board x2 | [link](http://e.tb.cn/h.gJRwBsI2jhjfMgq?tk=Blwl37Cjqox) |
-| XH2.54 Socket                 | 5        | 8pin x1, 4pin x2, 2pin x2            | [link](http://e.tb.cn/h.gJRx9rqzKRJdwGG?tk=2ZND37CQ6tV) |
+| 8-line Giga Ethernet cable    | 1        | Data transmission                    | -                                                            |
+| SP3232 Module                 | 1        | RS232-TTL conversion                 | [link](http://e.tb.cn/h.gJosLscFDzw8Mb8?tk=u5v037C8lvo)      |
+| TJA1050 CAN Module            | 1        | CAN controller                       | [link](http://e.tb.cn/h.gJRE7eLncdnfH2f?tk=bT1N37CR3JV)      |
+| RJ45 Socket                   | 3        | Control board x1, interface board x2 | [link](http://e.tb.cn/h.gJRwBsI2jhjfMgq?tk=Blwl37Cjqox)      |
+| XH2.54 Socket                 | 5        | 8pin x1, 4pin x2, 2pin x2            | [link](http://e.tb.cn/h.gJRx9rqzKRJdwGG?tk=2ZND37CQ6tV)      |
 
 > (*) Or other LiDAR sensors, e.g., [Robosense RS16](https://www.robosense.ai/en) / [Livox MID360](https://www.livoxtech.com/) / [Livox Horizon](https://www.livoxtech.com/).
 ### Mechanical components setup
@@ -52,9 +53,9 @@
 [hardware/Mechanical/stand.step](hardware/Mechanical/stand.step)
 
 
-![3D Printing Preview](documents/3d_printting.jpg)
 
 #### 3D printing Instructions
+
 
 Our CAD models are optimized for 3D printing to facilitate rapid prototyping and reproduction. 
 The common parameters for the 3D printer are as follows. 
@@ -72,6 +73,8 @@ For reference, we use a **SnapMaker A350 3D printer**, and use **Ultimaker Cura 
 - **Infill:** 60% Gyroid
 - **Support:** On
 - **Adhesion:** On 
+
+![3D Printing Preview](documents/3d_printting.jpg)
 
 ### Electronic components setup
 
