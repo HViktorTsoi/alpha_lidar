@@ -61,7 +61,7 @@
 
 
 Our CAD models are optimized for 3D printing to facilitate rapid prototyping and reproduction. 
-The common parameters for the 3D printer are as follows. 
+The parameters for the 3D printer are as follows. 
 
 - **Printing material:** Lanbo PLA+
 - **Temperature:** 200C
@@ -74,7 +74,7 @@ The common parameters for the 3D printer are as follows.
 - **Infill:** 60% Gyroid
 - **Support:** On
 - **Adhesion:** On 
-- 
+
 For reference, we use a **SnapMaker A350 3D printer**, and use **Ultimaker Cura 4.9.1** for model slicing.
 
 ![3D Printing Preview](documents/3d_printting.jpg)
