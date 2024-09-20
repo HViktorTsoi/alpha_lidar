@@ -25,7 +25,7 @@
 | **Electronic Parts**       |          |                                      |                                                                                 |
 | Control board              | 1        | PCB                                  | [link](hardware/PCB/EasyEDA_PCB_control_board.json)                             |
 | Host machine interface     | 1        | PCB                                  | [link](hardware/PCB/EasyEDA_PCB_host_machine_interface.json)                    |
-| STM32F103C8                | 1        | MCU                                  | [link](https://www.st.com/en/microcontrollers-microprocessors/stm32f103c8.html) |
+| STM32F103C8 Dev Board      | 1        | MCU                                  | [link](http://e.tb.cn/h.grrLx6RYA14IKhd?tk=78g03iXNOQm) |
 | SP3232 Module              | 1        | RS232-TTL converter                  | [link](http://e.tb.cn/h.gJosLscFDzw8Mb8?tk=u5v037C8lvo)                         |
 | TJA1050 CAN Module         | 1        | CAN controller                       | [link](http://e.tb.cn/h.gJRE7eLncdnfH2f?tk=bT1N37CR3JV)                         |
 | CH340C SOP16               | 1        | USB-Serial converter                 | [link](http://e.tb.cn/h.gJLbUM7WQJP9YyL?tk=Q6bh37CsSeL)                         |
@@ -60,8 +60,8 @@
 #### 3D printing instructions
 
 
-Our CAD models are optimized for 3D printing to facilitate rapid prototyping and reproduction. 
-The parameters for the 3D printer are as follows. 
+Our CAD models are optimized for 3D printing to facilitate rapid prototyping and reproducing. 
+The key parameters for the 3D printer are: 
 
 - **Printing material:** Lanbo PLA+
 - **Temperature:** 200C
