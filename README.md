@@ -4,17 +4,26 @@ This is the official implementation of the paper **𝛼LiDAR: An Adaptive High-R
 
 LiDAR technology holds vast potential across various sectors, including robotics, autonomous driving, and urban planning. However, the performance of current LiDAR sensors is hindered by limited field of view (FOV), low resolution, and lack of flexible focusing capability. We introduce 𝛼LiDAR, an innovative LiDAR system that employs controllable actuation to provide a panoramic FOV, high resolution, and adaptable scanning focus.
 
+
+## Demo video (YouTube)
+[![alpha_lidar_demo_video](documents/demo_video.jpg)](https://www.youtube.com/watch?v=x4zc_I_xTaw)
+
+
 ## System overview 
 
 The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR sensor through the incorporation of a controllable, active rotational mechanism. This modification allows the sensor to scan previously inaccessible blind spots and focus on specific areas of interest in an adaptive manner. 
 
-
-![Teaser)](documents/teaser_pipeline.png)
-![Teaser)](documents/teaser_hardware.jpg)
+![Teaser)](documents/teaser_overview.jpg)
 ![Teaser)](documents/teaser_slam.jpg)
+
+[//]: # (![Teaser&#41;]&#40;documents/teaser_pipeline.png&#41;)
+
+
 
 
 ## Hardware setup guide
+
+![Teaser)](documents/teaser_hardware.jpg)
 
 ### Bill of materials
 | Component                  | Quantity | Detail                               | Link                                                                            |
@@ -44,8 +53,9 @@ The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR se
 | Gigabit Ethernet cable     | 1        | 8-line, for data transmission        | -                                                                               |
 
 > (*) Or other LiDAR sensors, e.g., [Robosense RS16](https://www.robosense.ai/en) / [Livox MID360](https://www.livoxtech.com/) / [Livox Horizon](https://www.livoxtech.com/).
-### Mechanical components setup
 
+
+### Mechanical components setup
 
 #### CAD models:
 - Assembly diagram (Preview with [Free CAD](https://www.freecad.org/) and [A2plus plugin](https://wiki.freecad.org/A2plus_Workbench) )
