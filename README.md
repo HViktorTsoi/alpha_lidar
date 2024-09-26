@@ -21,7 +21,7 @@ The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR se
 
 
 
-## Hardware setup guide
+# 🔨 Hardware setup guide
 
 ![Teaser)](documents/teaser_hardware.jpg)
 
@@ -145,25 +145,109 @@ The hex file of the firmware:
 
 To program the firmware onto the MCU, we need an [ST-LINK V2](https://www.st.com/en/development-tools/st-link-v2.html) programmer. Please refer to the programming process outlined in the[STM32CubeProgrammer user manual](https://www.st.com/resource/en/user_manual/um2237-stm32cubeprogrammer-software-description-stmicroelectronics.pdf).
 
-## Software setup guide (Under construction)
-### Run with docker (Recommanded)
+# 📋 Software setup guide 
+## Run with docker (Recommanded)
+### Prerequisites
 
-[//]: # (### Dependencies)
+- Ubuntu 18.04 or later
+- NVIDIA GPU Driver
+- [docker](https://docs.docker.com/get-docker/)
+- [nvidia-docker2](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
+- [docker-compose](https://docs.docker.com/compose/install/linux/#install-using-the-repository)
 
-[//]: # ()
-[//]: # (### Build)
+### 1. Prepare code and datasets
 
-[//]: # ()
-[//]: # (### Run)
+First, clone this repository:
+```shell
+git clone https://github.com/HViktorTsoi/alpha_lidar.git
+```
 
-### Build from scratch
+Download our datasets and save to this path: 
+```shell
+${path_to_alpha_lidar}/datasets
+```
+`${path_to_alpha_lidar}` is the path to the source code just been cloned. 
 
-[//]: # (### Dependencies)
+After downloading, the `alpha_lidar/datasets` directory should look like this：
 
-[//]: # ()
-[//]: # (### Build)
+```shell
+|-- datasets
+|---- alpha_lidar_15floors_staircase.corr.bag
+|---- alpha_lidar_large_indoor.bag
+|---- alpha_lidar_large_indoor.fusion.gt
+|---- alpha_lidar_various_scene.bag
+|---- alpha_lidar_various_scene.f9p.gt
+```
+The `*.bag` files store the raw data (LiDAR point cloud, IMU and Encode messages), while the corresponding `*.gt` files store the ground truth data.
 
-[//]: # ()
-[//]: # (### Run)
+### 2. Setup docker environment
+First, pull our preconfigured environment from docker hub
+```shell
+docker pull hviktortsoi/ubuntu2004_cuda_ros:latest
+```
+Then, enter the `docker` directory in the source code. 
 
-[//]: # (Github repository: https://github.com/HViktorTsoi/alpha_lidar)
+```shell
+cd ${path_to_alpha_lidar}/software/docker
+```
+`${path_to_alpha_lidar}` is the path where the source code just been cloned. 
+
+Before start the container, configure `xhost` on the host machine by:
+```shell
+sudo xhost +si:localuser:root
+```
+
+Then launch and enter the docker container:
+```shell
+sudo docker-compose run alpha-lidar bash
+```
+
+### 3. Run and evaluate αLiDAR
+
+The following steps are all executed in the bash terminal inside the docker container. 
+#### 3.1 Run αLiDAR
+
+Taking the `alpha_lidar_various_scene.bag` dataset as an example, to launch αLiDAR's `state estimation` module, execute:
+
+```shell
+roslaunch state_estimation mapping_robosense.launch bag_path:=/datasets/alpha_lidar_large_indoor.bag
+```
+After launching, press `space` key in the **bash terminal** to begin data playback.
+
+If everything is working smoothly, the users could see the visualization of αLiDAR's **point cloud maps** and **estimated poses** in the RVIZ GUI window. The users can use the mouse to move the viewpoint in the GUI window to observe a more comprehensive point cloud map.
+
+Additionally, the bash terminal will display the debug information like data playback time, real-time latency, etc.
+
+![result](documents/result.jpg)
+
+#### 3.2 Evaluate αLiDAR performance
+After completing data playback, press CTRL+C in the  **bash terminal** to exit `state estimation`.
+
+To evaluate αLiDAR's performance，execute：
+```shell
+rosrun state_estimation evaluation.py --gt_path /datasets/alpha_lidar_large_indoor.fusion.gt
+```
+It shows the evaluation results of trajectory precision, latency, FoV coverage, etc.
+
+![result](documents/result2.jpg)
+
+#### 3.3 Other datasets
+For `alpha_lidar_15floors_staircase.corr.bag` dataset, execute the following commands to run and evaluate:
+```shell
+# run
+roslaunch state_estimation mapping_robosense.launch bag_path:=/datasets/alpha_lidar_15floors_staircase.corr.bag
+# evaluate
+rosrun state_estimation evaluation.py 
+```
+
+For `alpha_lidar_various_scene.bag` dataset, execute the following commands to run and evaluate, note that a different `.launch` file is used here:
+```shell
+# run
+roslaunch state_estimation mapping_hesai.launch bag_path:=/datasets/alpha_lidar_various_scene.bag
+# evaluate
+rosrun state_estimation evaluation.py --gt_path /datasets/alpha_lidar_various_scene.f9p.gt
+```
+
+
+# Build from scratch 
+(Under construction)
