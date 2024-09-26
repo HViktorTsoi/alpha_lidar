@@ -229,6 +229,7 @@ The users can use the mouse to move the viewpoint in the RVIZ GUI to observe a m
 
 During visualization, if the users lost the point cloud view, press `z` key in the RVIZ GUI to reset the viewpoint;
 If the point clouds are not clear, try increasing the `Size (m)` parameter (e.g., to 0.05) in the left configuration panel to make the point cloud more visible.
+
 ![config](documents/rviz_config.png)
 
 #### 3.2 Evaluate αLiDAR performance
