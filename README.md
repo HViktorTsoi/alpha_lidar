@@ -168,7 +168,7 @@ ${path_to_alpha_lidar}/datasets
 ```
 `${path_to_alpha_lidar}` is the path to the source code just been cloned. 
 
-After downloading, the `alpha_lidar/datasets` directory should look like this：
+After downloading, the `alpha_lidar/datasets` directory should look like this:
 
 ```shell
 |-- datasets
@@ -185,7 +185,7 @@ First, pull our preconfigured environment from docker hub
 ```shell
 docker pull hviktortsoi/ubuntu2004_cuda_ros:latest
 ```
-Then, enter the `docker` directory in the source code. 
+Then, enter the `docker` directory in the source code
 
 ```shell
 cd ${path_to_alpha_lidar}/software/docker
@@ -214,11 +214,22 @@ roslaunch state_estimation mapping_robosense.launch bag_path:=/datasets/alpha_li
 ```
 After launching, press `space` key in the **bash terminal** to begin data playback.
 
-If everything is working smoothly, the users could see the visualization of αLiDAR's **point cloud maps** and **estimated poses** in the RVIZ GUI window. The users can use the mouse to move the viewpoint in the GUI window to observe a more comprehensive point cloud map.
+If everything is working smoothly, two RVIZ GUI windows will show up:
+
+The first RVIZ window shows the visualization of αLiDAR's **point cloud maps** and **estimated poses**. 
+![result](documents/result.jpg)
+
+The smaller second window shows the comparison result, which is naïvely stacking the raw point clouds without αLiDAR's pipeline.
+
+![result](documents/result3.jpg)
 
 Additionally, the bash terminal will display the debug information like data playback time, real-time latency, etc.
 
-![result](documents/result.jpg)
+The users can use the mouse to move the viewpoint in the RVIZ GUI to observe a more comprehensive point cloud map. 
+
+During visualization, if the users lost the point cloud view, press `z` key in the RVIZ GUI to reset the viewpoint;
+If the point clouds are not clear, try increasing the `Size (m)` parameter (e.g., to 0.05) in the left configuration panel to make the point cloud more visible.
+![config](documents/rviz_config.png)
 
 #### 3.2 Evaluate αLiDAR performance
 After completing data playback, press CTRL+C in the  **bash terminal** to exit `state estimation`.
