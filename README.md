@@ -9,9 +9,16 @@ LiDAR technology holds vast potential across various sectors, including robotics
 ## Demo video (YouTube)
 [![alpha_lidar_demo_video](documents/demo_video.jpg)](https://www.youtube.com/watch?v=x4zc_I_xTaw)
 
-## Table of Content
+## System overview 
+
+The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR sensor through the incorporation of a controllable, active rotational mechanism. This modification allows the sensor to scan previously inaccessible blind spots and focus on specific areas of interest in an adaptive manner. 
+
+![Teaser)](documents/teaser_overview.jpg)
+
+
+# Table of Content
 [//]: # (- [Demo video &#40;YouTube&#41;]&#40;#demo-video-youtube&#41;)
-- [System Overview](#system-overview)
+[//]: # (- [System Overview]&#40;#system-overview&#41;)
 - [How to Use This Repo](#how-to-use-this-repo)
 - [:gear: I. Hardware Guideline](#gear-i-hardware-guideline)
   - [1. Bill of Materials](#1-bill-of-materials)
@@ -27,25 +34,19 @@ LiDAR technology holds vast potential across various sectors, including robotics
 - [License](#license)
 
 
-## System overview 
-
-The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR sensor through the incorporation of a controllable, active rotational mechanism. This modification allows the sensor to scan previously inaccessible blind spots and focus on specific areas of interest in an adaptive manner. 
-
-![Teaser)](documents/teaser_overview.jpg)
-
 
 # How to use this repo:
 
 We offer two approaches for reproducing 𝛼LiDAR:
 
-## Approach 1: Build the hardware from scratch, and then test 𝛼LiDAR's algorithm.
+### Approach 1: Build the hardware from scratch, and then test 𝛼LiDAR's algorithm.
 
 We provide a detailed hardware guideline, including design files and production parameters for mechanical and electronic parts, along with a step-by-step replication tutorial. 
 After building the hardware, the users can collect datasets and test 𝛼LiDAR's software components locally. 
 For this approach, please start reading document from [⚙️ I. Hardware guideline](#gear-i-hardware-guideline) in sequential order.
 
 
-## Approach 2: Directly test 𝛼LiDAR's core algorithm with pre-collected datasets.
+### Approach 2: Directly test 𝛼LiDAR's core algorithm with pre-collected datasets.
 
 We also provide pre-collected datasets with 𝛼LiDAR's. These datasets allow the users to directly test the performance of 𝛼LiDAR's core software components. 
 For this approach, please directly refer to  [:floppy_disk: II. Prepare code and datasets](#floppydisk-ii-prepare-code-and-datasets) and [# :scroll: III. Software guideline](#scroll-iii-software-guideline). 
