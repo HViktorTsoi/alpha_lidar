@@ -16,7 +16,7 @@ The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR se
 ![Teaser)](documents/teaser_overview.jpg)
 
 
-# Table of Content
+# Table of Contents
 [//]: # (- [Demo video &#40;YouTube&#41;]&#40;#demo-video-youtube&#41;)
 [//]: # (- [System Overview]&#40;#system-overview&#41;)
 - [How to Use This Repo](#how-to-use-this-repo)
