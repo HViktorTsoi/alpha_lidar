@@ -24,7 +24,7 @@ The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR se
   - [1. Bill of Materials](#1-bill-of-materials)
   - [2. Build the Mechanical Components](#2-build-the-mechanical-components)
   - [3. Setup the Electronic Components](#3-setup-the-electronic-components)
-- [:floppy_disk: II. Prepare Code and Datasets](#floppydisk-ii-prepare-code-and-datasets)
+- [:minidisc: II. Prepare Code and Datasets](#minidisc-ii-prepare-code-and-datasets)
 - [:scroll: III. Software Guideline](#scroll-iii-software-guideline)
   - [Run with Docker (Recommended)](#run-with-docker-recommended)
     - [Prerequisites](#prerequisites)
@@ -49,7 +49,7 @@ For this approach, please start reading document from [⚙️ I. Hardware guidel
 ### Approach 2: Directly test 𝛼LiDAR's core algorithm with pre-collected datasets.
 
 We also provide pre-collected datasets with 𝛼LiDAR's. These datasets allow the users to directly test the performance of 𝛼LiDAR's core software components. 
-For this approach, please directly refer to  [:floppy_disk: II. Prepare code and datasets](#floppydisk-ii-prepare-code-and-datasets) and [# :scroll: III. Software guideline](#scroll-iii-software-guideline). 
+For this approach, please directly refer to  [:minidisc: II. Prepare code and datasets](#minidisc-ii-prepare-code-and-datasets) and [# :scroll: III. Software guideline](#scroll-iii-software-guideline). 
 
 # :gear: I. Hardware Guideline
 
@@ -229,7 +229,7 @@ The hex file of the firmware:
 
 To program the firmware onto the MCU, we need an [ST-LINK V2](https://www.st.com/en/development-tools/st-link-v2.html) programmer. Please refer to the programming process outlined in the[STM32CubeProgrammer user manual](https://www.st.com/resource/en/user_manual/um2237-stm32cubeprogrammer-software-description-stmicroelectronics.pdf).
 
-# :floppy_disk: II. Prepare Code and Datasets
+# :minidisc: II. Prepare Code and Datasets
 
 We also provide multiple pre-collected datasets to test 𝛼LiDAR's performance if the hardware is not available. The dataset can be downloaded at [Mega Drive](https://mega.nz/folder/fEpwARjD#AVRIQ-gzrFtTJn6fuwmXng) or [Baidu Pan (Code: u0tr)](https://pan.baidu.com/s/1nzBAgfkNCF8X1rAMBUw8Rg).
 
