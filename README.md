@@ -6,10 +6,10 @@ This is the official implementation of the paper **𝛼LiDAR: An Adaptive High-R
 
 LiDAR technology holds vast potential across various sectors, including robotics, autonomous driving, and urban planning. However, the performance of current LiDAR sensors is hindered by limited field of view (FOV), low resolution, and lack of flexible focusing capability. We introduce 𝛼LiDAR, an innovative LiDAR system that employs controllable actuation to provide a panoramic FOV, high resolution, and adaptable scanning focus.
 
-## Demo video (YouTube)
+## Demo Video (YouTube)
 [![alpha_lidar_demo_video](documents/demo_video.jpg)](https://www.youtube.com/watch?v=x4zc_I_xTaw)
 
-## System overview 
+## System Overview 
 
 The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR sensor through the incorporation of a controllable, active rotational mechanism. This modification allows the sensor to scan previously inaccessible blind spots and focus on specific areas of interest in an adaptive manner. 
 
@@ -35,7 +35,7 @@ The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR se
 
 
 
-# How to use this repo:
+# How to Use This Repo:
 
 We offer two approaches for reproducing 𝛼LiDAR:
 
@@ -51,7 +51,7 @@ For this approach, please start reading document from [⚙️ I. Hardware guidel
 We also provide pre-collected datasets with 𝛼LiDAR's. These datasets allow the users to directly test the performance of 𝛼LiDAR's core software components. 
 For this approach, please directly refer to  [:floppy_disk: II. Prepare code and datasets](#floppydisk-ii-prepare-code-and-datasets) and [# :scroll: III. Software guideline](#scroll-iii-software-guideline). 
 
-# :gear: I. Hardware guideline
+# :gear: I. Hardware Guideline
 
 𝛼LiDAR enhances its sensing ability by incorporating an activate motion mechanism in the FoV-limited directions in the physical layer, therefore, implementing the complete hardware system is important. 
 In this section, we will demonstrate the assembly of the hardware in detail, including the setup of sensors, mechanical structures and electronic components. 
@@ -60,7 +60,7 @@ Following this guide, users can reproduce the full 𝛼LiDAR hardware system, as
 
 ![Teaser)](documents/teaser_hardware.jpg)
 
-## 1. Bill of materials
+## 1. Bill of Materials
 
 This section provides all materials required to replicate 𝛼LiDAR, including sensors, mechanical parts, electronic components, etc. 
 Please prepare these materials before building 𝛼LiDAR.
@@ -112,12 +112,12 @@ Next, here are the mechanical and electronic parts required. Most of them can be
 
 </details>
 
-## 2. Build the mechanical components
+## 2. Build the Mechanical Components
 
 𝛼LiDAR's mechanical components including the structural parts for mounting the LiDAR, IMU, Motor, and the control board. 
 Our design is optimized for 3D printing to facilitate rapid prototyping and reproducing. 
 
-### 2.1 Prepare the CAD models:
+### 2.1 Prepare the CAD Models:
 First, download the following CAD models of the mechanical components. 
 The user can preview the assembly diagram and the part files with [FreeCAD](https://www.freecad.org/) software and [A2plus plugin](https://wiki.freecad.org/A2plus_Workbench).
 
@@ -142,7 +142,7 @@ The user can preview the assembly diagram and the part files with [FreeCAD](http
 
 </details>
 
-### 2.2 Build the components with a 3D printer
+### 2.2 Build the Components with a 3D Printer
 
 The users can then import the above STEP files into a 3D printing slicing software, set the printing parameters to generate the `.gcode` files, and then use a 3D printer to build the parts.
 For reference, we use a **SnapMaker A350 3D printer**, and use **Ultimaker Cura 4.9.1** for model slicing.
@@ -170,7 +170,7 @@ The orientation of the sliced models should be positioned like this:
 
 <img src="documents/3d_printting.jpg" width=640px alt="3D Printing Preview">
 
-## 3. Setup the electronic components
+## 3. Setup the Electronic Components
 
 𝛼LiDAR's electronic components mainly consists of two PCBs:  the **control board** and the **host machine interface**.
 
@@ -178,7 +178,7 @@ The **control board** is mounted together with the Motor, LiDAR, IMU sensor, agg
 
 the **host machine interface** splits the 8-line gigabit Ethernet cable into a 4-line 100Mbps Ethernet and a USB 2.0 interface, connecting to the host computer.
 
-### 3.1 Preview the PCB designing files
+### 3.1 Preview the PCB Designing Files
 
 <details>
 <summary>Click here to show the PCB design files: </summary>
@@ -220,7 +220,7 @@ To assemble the MCU and other electronic components onto the PCB, we can use [JL
 
 <img src="documents/pcb_assembly.jpg" width=480px alt="PCB">
 
-### 3.3 Uploading the firmware
+### 3.3 Uploading the Firmware
 
 The firmware needs to be programmed into the STM32 MCU on the control board. It includes all the functionalities necessary for the board to operate properly, including data acquisition from multiple sensors, time synchronization,  protocol conversion, etc. 
 
@@ -229,7 +229,7 @@ The hex file of the firmware:
 
 To program the firmware onto the MCU, we need an [ST-LINK V2](https://www.st.com/en/development-tools/st-link-v2.html) programmer. Please refer to the programming process outlined in the[STM32CubeProgrammer user manual](https://www.st.com/resource/en/user_manual/um2237-stm32cubeprogrammer-software-description-stmicroelectronics.pdf).
 
-# :floppy_disk: II. Prepare code and datasets
+# :floppy_disk: II. Prepare Code and Datasets
 
 We also provide multiple pre-collected datasets to test 𝛼LiDAR's performance if the hardware is not available. The dataset can be downloaded at [Mega Drive](https://mega.nz/folder/fEpwARjD#AVRIQ-gzrFtTJn6fuwmXng) or [Baidu Pan (Code: u0tr)](https://pan.baidu.com/s/1nzBAgfkNCF8X1rAMBUw8Rg).
 
@@ -267,14 +267,14 @@ The `*.bag` files store the raw data (LiDAR point cloud, IMU and Encode messages
 
 
 
-# :scroll: III. Software guideline
+# :scroll: III. Software Guideline
 
 
 In this section, we demonstrate how to run and evaluate 𝛼LiDAR's core software module, which addresses 𝛼LiDAR' main challenges: accurately estimating the LiDAR's poses and recovering undistorted LiDAR measurements under the rapid motion of both the LiDAR and the carrier.
 
 We offer two methods for running the 𝛼LiDAR code: running with docker (we recommend) and building the source code from scratch.
 
-## Run with docker (Recommanded)
+## Run with Docker (Recommended)
 ### Prerequisites
 
 - Ubuntu 18.04 or later
@@ -283,7 +283,7 @@ We offer two methods for running the 𝛼LiDAR code: running with docker (we rec
 - [nvidia-docker2](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 - [docker-compose](https://docs.docker.com/compose/install/linux/#install-using-the-repository)
 
-### 1. Setup docker environment
+### 1. Setup Docker Environment
 First, pull our preconfigured environment from docker hub
 ```shell
 docker pull hviktortsoi/ubuntu2004_cuda_ros:latest
@@ -305,7 +305,7 @@ Then launch and enter the docker container:
 sudo docker-compose run alpha-lidar bash
 ```
 
-### 2. Run and evaluate αLiDAR
+### 2. Run and Evaluate αLiDAR
 
 The following steps are all executed in the bash terminal inside the docker container. 
 #### 2.1 Run αLiDAR
@@ -336,7 +336,7 @@ If the point clouds are not clear, try increasing the `Size (m)` parameter (e.g.
 
 ![config](documents/rviz_config.png)
 
-#### 2.2 Evaluate αLiDAR performance
+#### 2.2 Evaluate αLiDAR's Performance
 After completing data playback, press CTRL+C in the  **bash terminal** to exit `state estimation`.
 
 To evaluate αLiDAR's performance，execute：
@@ -347,7 +347,7 @@ It shows the evaluation results of trajectory precision, latency, FoV coverage, 
 
 ![result](documents/result2.jpg)
 
-#### 2.3 Other datasets
+#### 2.3 Other Datasets
 For `alpha_lidar_15floors_staircase.bag` dataset, execute the following commands to run and evaluate:
 ```shell
 # run
@@ -363,9 +363,9 @@ roslaunch state_estimation mapping_hesai.launch bag_path:=/datasets/alpha_lidar_
 # evaluate
 rosrun state_estimation evaluation.py --gt_path /datasets/alpha_lidar_various_scene.f9p.gt
 ```
-![Teaser)](documents/teaser_slam.jpg)
+[//]: # (![Teaser&#41;]&#40;documents/teaser_slam.jpg&#41;)
 
-## Build source from scratch 
+## Build Source from Scratch 
 (Under construction)
 
 # License
