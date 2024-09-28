@@ -1,22 +1,23 @@
 This is the official implementation of the paper **𝛼LiDAR: An Adaptive High-Resolution Panoramic LiDAR System (MobiCom 2024)**. 
 
 
-
 # 𝛼LiDAR: An Adaptive High-Resolution Panoramic LiDAR System
 
-LiDAR technology holds vast potential across various sectors, including robotics, autonomous driving, and urban planning. However, the performance of current LiDAR sensors is hindered by limited field of view (FOV), low resolution, and lack of flexible focusing capability. We introduce 𝛼LiDAR, an innovative LiDAR system that employs controllable actuation to provide a panoramic FOV, high resolution, and adaptable scanning focus.
+The performance of current LiDAR sensors is hindered by limited field of view (FOV), low resolution, and lack of flexible focusing capability. We introduce 𝛼LiDAR, an innovative LiDAR system that employs controllable actuation to provide a panoramic FOV, high resolution, and adaptable scanning focus. See our demos below (3.7k+ views):
 
 ## Demo Video (YouTube)
 [![alpha_lidar_demo_video](documents/demo_video.jpg)](https://www.youtube.com/watch?v=x4zc_I_xTaw)
 
 ## System Overview 
 
-The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR sensor through the incorporation of a controllable, active rotational mechanism. This modification allows the sensor to scan previously inaccessible blind spots and focus on specific areas of interest in an adaptive manner. 
+The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR sensor through the incorporation of a controllable, active rotational mechanism. This modification allows the sensor to scan previously inaccessible blind spots and focus on specific areas of interest in an adaptive manner. A major challenge with 𝛼 LiDAR is that rapid rotations result in highly distorted point clouds. Our solution focuses on accurately estimating the LiDAR sensor’s pose during rapid rotations to effectively correct and reconstruct the point cloud.
 
 ![Teaser)](documents/teaser_overview.jpg)
 
 
 # Table of Contents
+This repository contains the hardware specifications, software, and datasets for reproducing and evaluating 𝛼LiDAR:
+
 [//]: # (- [Demo video &#40;YouTube&#41;]&#40;#demo-video-youtube&#41;)
 [//]: # (- [System Overview]&#40;#system-overview&#41;)
 - [How to Use This Repo](#how-to-use-this-repo)
@@ -24,7 +25,7 @@ The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR se
   - [1. Bill of Materials](#1-bill-of-materials)
   - [2. Build the Mechanical Components](#2-build-the-mechanical-components)
   - [3. Setup the Electronic Components](#3-setup-the-electronic-components)
-- [:minidisc: II. Prepare Code and Datasets](#minidisc-ii-prepare-code-and-datasets)
+- [:minidisc: II. Datasets](#minidisc-ii-prepare-code-and-datasets)
 - [:scroll: III. Software Guideline](#scroll-iii-software-guideline)
   - [Run with Docker (Recommended)](#run-with-docker-recommended)
     - [Prerequisites](#prerequisites)
@@ -42,8 +43,8 @@ We offer two approaches for reproducing 𝛼LiDAR:
 ### Approach 1: Build the hardware from scratch, and then test 𝛼LiDAR's algorithm.
 
 We provide a detailed hardware guideline, including design files and production parameters for mechanical and electronic parts, along with a step-by-step replication tutorial. 
-After building the hardware, the users can collect datasets and test 𝛼LiDAR's software components locally. 
-For this approach, please start reading document from [⚙️ I. Hardware guideline](#gear-i-hardware-guideline) in sequential order.
+Once the hardware is set up, users can collect datasets and test 𝛼LiDAR in real-time and on-site.
+To begin, please refer to the [⚙️ I. Hardware guideline](#gear-i-hardware-guideline) and follow the instructions in the specified order.
 
 
 ### Approach 2: Directly test 𝛼LiDAR's core algorithm with pre-collected datasets.
@@ -53,7 +54,7 @@ For this approach, please directly refer to  [:minidisc: II. Prepare code and da
 
 # :gear: I. Hardware Guideline
 
-𝛼LiDAR enhances its sensing ability by incorporating an activate motion mechanism in the FoV-limited directions in the physical layer, therefore, implementing the complete hardware system is important. 
+𝛼LiDAR enhances its sensing ability by incorporating an activate rotation mechanism in the FoV-limited directions in the physical layer, therefore, implementing the complete hardware system is important. 
 In this section, we will demonstrate the assembly of the hardware in detail, including the setup of sensors, mechanical structures and electronic components. 
 We provide comprehensive Bill of Materials, 3D printing instructions, PCB designing and manufacturing details and firmware setup guides to ensure easy replication of 𝛼LiDAR. 
 Following this guide, users can reproduce the full 𝛼LiDAR hardware system, as shown bellow, for data collection and performance validation.
