@@ -10,7 +10,7 @@ The performance of current LiDAR sensors is hindered by limited field of view (F
 
 ## System Overview 
 
-The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR sensor through the incorporation of a controllable, active rotational mechanism. This modification allows the sensor to scan previously inaccessible blind spots and focus on specific areas of interest in an adaptive manner. A major challenge with 𝛼 LiDAR is that rapid rotations result in highly distorted point clouds. Our solution focuses on accurately estimating the LiDAR sensor’s pose during rapid rotations to effectively correct and reconstruct the point cloud.
+The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR sensor through the incorporation of a controllable, active rotational mechanism. This modification allows the sensor to scan previously inaccessible blind spots and focus on specific areas of interest in an adaptive manner. A major challenge with 𝛼LiDAR is that rapid rotations result in highly distorted point clouds. Our solution focuses on accurately estimating the LiDAR sensor’s pose during rapid rotations to effectively correct and reconstruct the point cloud.
 
 ![Teaser)](documents/teaser_overview.jpg)
 
