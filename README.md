@@ -3,7 +3,8 @@ This is the official implementation of the paper **𝛼LiDAR: An Adaptive High-R
 
 # 𝛼LiDAR: An Adaptive High-Resolution Panoramic LiDAR System
 
-The performance of current LiDAR sensors is hindered by limited field of view (FOV), low resolution, and lack of flexible focusing capability. We introduce 𝛼LiDAR, an innovative LiDAR system that employs controllable actuation to provide a panoramic FOV, high resolution, and adaptable scanning focus. See our demos below (3.7k+ views):
+The performance of current LiDAR sensors is hindered by limited field of view (FOV), low resolution, and lack of flexible focusing capability. We introduce 𝛼LiDAR, an innovative LiDAR system that employs controllable actuation to provide a panoramic FOV, high resolution, and adaptable scanning focus. See our demos below $\color{red}{\textbf{(3.7k+ views)}}$:
+
 
 ## Demo Video (YouTube)
 [![alpha_lidar_demo_video](documents/demo_video.jpg)](https://www.youtube.com/watch?v=x4zc_I_xTaw)
@@ -30,8 +31,7 @@ This repository contains the hardware specifications, software, and datasets for
   - [Run with Docker (Recommended)](#run-with-docker-recommended)
     - [Prerequisites](#prerequisites)
     - [1. Setup Docker Environment](#1-setup-docker-environment)
-    - [2. Run and Evaluate αLiDAR](#2-run-and-evaluate-𝛼lidar)
-  - [Build Source from Scratch](#build-source-from-scratch)
+    - [2. Run and Evaluate αLiDAR](#2-run-and-evaluate)
 - [License](#license)
 
 
@@ -273,8 +273,6 @@ The `*.bag` files store the raw data (LiDAR point cloud, IMU and Encode messages
 
 In this section, we demonstrate how to run and evaluate 𝛼LiDAR's core software module, which addresses 𝛼LiDAR' main challenges: accurately estimating the LiDAR's poses and recovering undistorted LiDAR measurements under the rapid motion of both the LiDAR and the carrier.
 
-We offer two methods for running the 𝛼LiDAR code: running with docker (we recommend) and building the source code from scratch.
-
 ## Run with Docker (Recommended)
 ### Prerequisites
 
@@ -306,7 +304,7 @@ Then launch and enter the docker container:
 sudo docker-compose run alpha-lidar bash
 ```
 
-### 2. Run and Evaluate αLiDAR
+### 2. Run and Evaluate
 
 The following steps are all executed in the bash terminal inside the docker container. 
 #### 2.1 Run αLiDAR
@@ -366,8 +364,6 @@ rosrun state_estimation evaluation.py --gt_path /datasets/alpha_lidar_various_sc
 ```
 [//]: # (![Teaser&#41;]&#40;documents/teaser_slam.jpg&#41;)
 
-## Build Source from Scratch 
-(Under construction)
 
 # License
 This repository is released under the MIT license. See [LICENSE](LICENSE) for additional details.
