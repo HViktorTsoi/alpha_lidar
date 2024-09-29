@@ -239,7 +239,7 @@ After preparing all the required sensors, actuators, and the assembled PCB, plea
 The diagram includes the PIN definitions for each sensor's XT2.54 interface, arranged in the same order as they appear on the actual PCB. 
 The entire PCB (and the sensors) can be powered through a DC 24V input.
 
-<img src="documents/interface.jpg" width=960px alt="Wire">
+<img src="documents/interface.jpg" width=840px alt="Wire">
 
 
 
