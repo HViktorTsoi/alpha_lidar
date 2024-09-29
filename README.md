@@ -236,7 +236,7 @@ To program the firmware onto the MCU, we need an [ST-LINK V2](https://www.st.com
 ### 3.4 Wire Everything Together
 
 After preparing all the required sensors, actuators, and the assembled PCB, please connect the components according to the wiring diagram below. 
-The diagram includes the PIN definitions for each sensor's XT2.54 interface, arranged in the same order as they appear on the actual PCB. 
+The diagram includes the PIN definitions for each sensor's XH2.54 interface, arranged in the same order as they appear on the actual PCB. 
 The entire PCB (and the sensors) can be powered through a DC 24V input.
 
 <img src="documents/interface.jpg" width=840px alt="Wire">
