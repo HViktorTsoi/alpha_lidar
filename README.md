@@ -91,7 +91,7 @@ Next, here are the mechanical and electronic parts required. Most of them can be
 |----------------------------|----------|---------------------------------------------|--------------------------------------------------------------|
 | **Mechanical Parts**       |          |                                             |                                                              |
 | LanBo PLA+  filement       | 1        | 3D printing filement                        | [link](http://e.tb.cn/h.gsp9zhNGv3aDk1e?tk=9Jja38xDsqf)      |
-| Central mounting structure | 1        | 3D printed part                             | [.step](hardware/Mechanical/center_mounting_structure.step)  |
+| Central mounting structure | 1        | 3D printed part                             | [.step](hardware/Mechanical/center_mounting_structure_hesai.step)  |
 | Motor mounting base        | 1        | 3D printed part                             | [.step](hardware/Mechanical/motor_mounting_base.step)        |
 | Stand                      | 1        | 3D printed part                             | [.step](hardware/Mechanical/stand.step)                      |
 | Hex socket cap screws      | 18       | 7 x M3 x 10mm, 7 x M4 x 10mm, 4 x M4 x 25mm | -                                                            |
@@ -127,9 +127,13 @@ The user can preview the assembly diagram and the part files with [FreeCAD](http
 
 [hardware/Mechanical/assembly.FCStd](hardware/Mechanical/assembly.FCStd)
 
-- LiDAR-IMU-Motor central mounting structure
+- LiDAR-IMU-Motor central mounting structure (for Hesai Pandar XT16)
 
-[hardware/Mechanical/center_mounting_structure.step](hardware/Mechanical/center_mounting_structure.step)
+[hardware/Mechanical/center_mounting_structure_hesai.step](hardware/Mechanical/center_mounting_structure_hesai.step)
+
+- LiDAR-IMU-Motor central mounting structure (for Robosense RS16)
+
+[hardware/Mechanical/center_mounting_structure_rs16.step](hardware/Mechanical/center_mounting_structure_rs16.step)
 
 - Motor mounting base
 
