@@ -27,9 +27,6 @@ The core concept of 𝛼LiDAR is to expand the operational freedom of a LiDAR se
 - [:minidisc: II. Prepare Code and Datasets](#minidisc-ii-prepare-code-and-datasets)
 - [:scroll: III. Software Guideline](#scroll-iii-software-guideline)
   - [Run with Docker (Recommended)](#run-with-docker-recommended)
-    - [Prerequisites](#prerequisites)
-    - [1. Setup Docker Environment](#1-setup-docker-environment)
-    - [2. Run and Evaluate αLiDAR](#2-run-and-evaluate-𝛼lidar)
   - [Build Source from Scratch](#build-source-from-scratch)
 - [License](#license)
 
@@ -272,7 +269,8 @@ The `*.bag` files store the raw data (LiDAR point cloud, IMU and Encode messages
 
 In this section, we demonstrate how to run and evaluate 𝛼LiDAR's core software module, which addresses 𝛼LiDAR' main challenges: accurately estimating the LiDAR's poses and recovering undistorted LiDAR measurements under the rapid motion of both the LiDAR and the carrier.
 
-We offer two methods for running the 𝛼LiDAR code: running with docker (we recommend) and building the source code from scratch.
+We offer two methods for running the 𝛼LiDAR code: 
+[running with docker (we recommend)](#run-with-docker-recommended) and [building the source code from scratch](#build-source-from-scratch).
 
 ## Run with Docker (Recommended)
 ### Prerequisites
@@ -305,7 +303,7 @@ Then launch and enter the docker container:
 sudo docker-compose run alpha-lidar bash
 ```
 
-### 2. Run and Evaluate αLiDAR
+### 2. Run and Evaluate
 
 The following steps are all executed in the bash terminal inside the docker container. 
 #### 2.1 Run αLiDAR
@@ -329,7 +327,7 @@ The smaller second window shows the comparison result, which is naïvely stackin
 
 Additionally, the bash terminal will display the debug information like data playback time, real-time latency, etc.
 
-The users can use the mouse to move the viewpoint in the RVIZ GUI to observe a more comprehensive point cloud map. 
+Users can use the mouse **Left-click**, **Middle-scroll** and **Middle-click** to move the viewpoint in the RVIZ GUI to observe a more comprehensive point cloud map. 
 
 During visualization, if the users lost the point cloud view, press `z` key in the RVIZ GUI to reset the viewpoint;
 If the point clouds are not clear, try increasing the `Size (m)` parameter (e.g., to 0.05) in the left configuration panel to make the point cloud more visible.
@@ -365,8 +363,51 @@ rosrun state_estimation evaluation.py --gt_path /datasets/alpha_lidar_various_sc
 ```
 [//]: # (![Teaser&#41;]&#40;documents/teaser_slam.jpg&#41;)
 
-## Build Source from Scratch 
-(Under construction)
+## Build Source from Scratch
+
+### Prerequisites
+#### System-level requirements:
+- **Ubuntu 18.04 or later.**
+- **ROS melodic or later.** Follow [ROS Installation](http://wiki.ros.org/ROS/Installation).
+- **PCL 1.8 or later.** Follow [PCL Installation](http://www.pointclouds.org/downloads/linux.html).
+- **Eigen 3.3.4 or later.** Follow [Eigen Installation](http://eigen.tuxfamily.org/index.php?title=Main_Page).
+- **livox_ros_driver1.** Follow [livox_ros_driver Installation](https://github.com/Livox-SDK/livox_ros_driver).
+> *Remarks:* The **livox_ros_driver** must be installed and **sourced** before run any 𝛼LiDAR's state_estimation launch file.
+
+> *Remarks:* How to source? The easiest way is add the line ``` source $Livox_ros_driver_dir$/devel/setup.bash ``` to the end of file ``` ~/.bashrc ```, where ``` $Livox_ros_driver_dir$ ``` is the directory of the livox ros driver workspace (should be the ``` ws_livox ``` directory if you completely followed the livox official document).
+
+#### Python requirements:
+- Python 3.7 or later
+- [evo](https://github.com/MichaelGrupp/evo)
+- opencv-python
+- ros_numpy
+- transforms3d
+
+### 1. Build
+Enter the catkin workspace directory:
+```shell
+cd ${path_to_alpha_lidar}/software/alpha_lidar_ws
+```
+
+`${path_to_alpha_lidar}` is the path where the source code just been cloned. 
+
+Then compile the code
+
+```shell
+catkin_make -DCATKIN_WHITELIST_PACKAGES="state_estimation"
+```
+
+and source
+
+```shell
+source ./devel/setup.bash
+```
+
+### 2. Run and Evaluate
+This process follows the same steps as outlined in the [Run with Docker (Recommended)](#run-with-docker-recommended), 
+please refer to this section [2. Run and Evaluate](#2-run-and-evaluate) for detailed instructions.
+
+
 
 # License
 This repository is released under the MIT license. See [LICENSE](LICENSE) for additional details.
