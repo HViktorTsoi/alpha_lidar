@@ -232,6 +232,19 @@ The hex file of the firmware:
 
 To program the firmware onto the MCU, we need an [ST-LINK V2](https://www.st.com/en/development-tools/st-link-v2.html) programmer. Please refer to the programming process outlined in the[STM32CubeProgrammer user manual](https://www.st.com/resource/en/user_manual/um2237-stm32cubeprogrammer-software-description-stmicroelectronics.pdf).
 
+
+### 3.4 Wire Everything Together
+
+After preparing all the required sensors, actuators, and the assembled PCB, please connect the components according to the wiring diagram below. 
+The diagram includes the PIN definitions for each sensor's XH2.54 interface, arranged in the same order as they appear on the actual PCB. 
+The entire PCB (and the sensors) can be powered through a DC 24V input.
+
+<img src="documents/interface.jpg" width=840px alt="Wire">
+
+
+
+
+
 # :minidisc: II. Prepare Code and Datasets
 
 We also provide multiple pre-collected datasets to test 𝛼LiDAR's performance if the hardware is not available. The dataset can be downloaded at [Mega Drive](https://mega.nz/folder/fEpwARjD#AVRIQ-gzrFtTJn6fuwmXng) or [Baidu Pan (Code: u0tr)](https://pan.baidu.com/s/1nzBAgfkNCF8X1rAMBUw8Rg).
@@ -329,7 +342,7 @@ The first RVIZ window shows the visualization of αLiDAR's **point cloud maps** 
 The smaller second window shows the comparison result, which is naïvely stacking the raw point clouds without αLiDAR's pipeline.
 
 [//]: # (![result]&#40;documents/result3.jpg&#41;)
-<img src="documents/result3.jpg" width=720]8px alt="result">
+<img src="documents/result3.jpg" width=720px alt="result">
 
 Additionally, the bash terminal will display the debug information like data playback time, real-time latency, etc.
 
