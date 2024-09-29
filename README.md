@@ -239,9 +239,7 @@ After preparing all the required sensors, actuators, and the assembled PCB, plea
 The diagram includes the PIN definitions for each sensor's XT2.54 interface, arranged in the same order as they appear on the actual PCB. 
 The entire PCB (and the sensors) can be powered through a DC 24V input.
 
-![Wire](./documents/interface.jpg)
-
-
+<img src="documents/interface.jpg" width=960px alt="Wire">
 
 
 
@@ -344,7 +342,7 @@ The first RVIZ window shows the visualization of αLiDAR's **point cloud maps** 
 The smaller second window shows the comparison result, which is naïvely stacking the raw point clouds without αLiDAR's pipeline.
 
 [//]: # (![result]&#40;documents/result3.jpg&#41;)
-<img src="documents/result3.jpg" width=720]8px alt="result">
+<img src="documents/result3.jpg" width=720px alt="result">
 
 Additionally, the bash terminal will display the debug information like data playback time, real-time latency, etc.
 
