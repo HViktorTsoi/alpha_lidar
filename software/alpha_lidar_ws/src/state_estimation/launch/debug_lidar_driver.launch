@@ -1,0 +1,16 @@
+<launch>
+    <!--- hesai decode -->
+    <group if="$(eval live != True)">
+        <include file="$(find hesai_lidar)/launch/hesai_lidar.launch">
+            <arg name="lidar_type"  value="PandarXT-16"/>
+            <arg name="timestamp_type"  value="foo"/>
+            <arg name="data_type"  value="rosbag"/>
+        </include>
+    </group>
+
+    <!--- rslidar decode -->
+    <node pkg="rslidar_sdk" type="rslidar_sdk_node" name="rslidar_sdk_decode_node" output="screen">
+        <param name="config_path" value="/home/hvt/Code/catkin_ws/src/rslidar_sdk/config/config.packets.yaml"/>
+    </node>
+
+</launch>

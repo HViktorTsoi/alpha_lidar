@@ -1,0 +1,32 @@
+# BUAA, CUHK
+# Email: cuijiahe@buaa.edu.cn
+
+version: '0.1'
+services:
+  alpha-lidar:
+    image: hviktortsoi/ubuntu2004_cuda_ros
+    build: .
+    command: /bin/bash
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+    privileged: true
+    stdin_open: true
+    tty: true
+    environment:
+        - DISPLAY=${DISPLAY}
+        - GDK_SCALE
+        - GDK_DPI_SCALE
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ../alpha_lidar_ws/src/state_estimation:/root/catkin_ws/src/state_estimation
+      - ../../datasets:/datasets
+
+    # entrypoint: /bin/bash
+    network_mode: host

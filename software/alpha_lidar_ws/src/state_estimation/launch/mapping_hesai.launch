@@ -1,0 +1,39 @@
+<launch>
+    <!-- Launch file for velodyne16 VLP-16 LiDAR -->
+
+    <arg name="rviz" default="true"/>
+    <arg name="debug" default="false"/>
+    <arg name="live" default="false"/>
+    <arg name="bag_path" default=""/>
+
+    <rosparam command="load" file="$(find state_estimation)/config/hesai16_rotation.yaml"/>
+
+    <group if="$(eval arg('debug') == False)">
+        <node pkg="state_estimation" type="state_estimation_node" name="state_estimation_node" output="screen"/>
+    </group>
+
+    <!--- pandar to Velodyne -->
+    <node pkg="state_estimation" type="pandar_to_velodyne" name="pandar_to_velodyne" output="screen" args="XYZIRT XYZIRT">
+        <remap from="/hesai/pandar" to="/hesai/pandar"/>
+    </node>
+
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz"
+              args="-d $(find state_estimation)/config/rviz_cfg/hesai16.rviz"/>
+    </group>
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz_raw"
+              args="-d $(find state_estimation)/config/rviz_cfg/raw_hesai16.rviz"/>
+    </group>
+
+    <!--- result logging -->
+    <arg name="logging" default="true"/>
+    <group if="$(arg logging)">
+        <node pkg="state_estimation" type="logger.py" name="intermediate_result_logger" output="screen"/>
+    </group>
+
+    <group if="$(eval arg('bag_path') != '')">
+        <node pkg="rosbag" type="play" name="player" output="screen" args="$(arg bag_path) --pause"/>
+    </group>
+
+</launch>

@@ -1,0 +1,74 @@
+common:
+    lid_topic:  "/velodyne_points"
+#    imu_topic:  "/imu/data"
+    imu_topic:  "/imu/data"
+    encoder_topic:  "/imu/encoder"
+    time_sync_en: false         # ONLY turn on when external time synchronization is really not possible
+    
+preprocess:
+    lidar_type: 2                # 1 for Livox serials LiDAR, 2 for Velodyne LiDAR, 3 for ouster LiDAR, 
+    scan_line: 16
+    scan_rate: 10                # only need to be set for velodyne, unit: Hz,
+    blind: 1.0
+    point_filter_num: 1
+
+mapping:
+    down_sample_size: 0.3
+    max_iteration: 4
+#    voxel_size: 1.0
+#    max_layer: 3                # 4 layer, 0, 1, 2, 3
+    voxel_size: 0.25
+    max_layer: 2                # 4 layer, 0, 1, 2, 3
+    layer_point_size: [ 5, 5, 5, 5, 5 ]
+    plannar_threshold: 0.01
+    # test normal rectification
+#    max_points_size: 100000
+#    max_cov_points_size: 100000
+    max_points_size: 1000
+    max_cov_points_size: 1000
+    init_gravity_with_pose: true
+
+    fov_degree:    360
+    det_range:     100.0
+    extrinsic_est_en:  false      # true: enable the online estimation of IMU-LiDAR extrinsic,
+    extrinsic_T: [-0.025, 0, -0.06 ]
+    extrinsic_R: [0, -1, 0,
+                  -1, 0, 0,
+                  0, 0, -1]
+
+    encoder_fusion_en: true     # true: enable encoder angle fusion,
+    extrinsic_T_encoder_lidar:  [0.00581, 0.01437, 0.10497]
+    extrinsic_R_encoder_lidar: [3.63e-05, 0.0001935, 1.0,
+                                0.999992, -0.004, -3.56e-05,
+                                0.004, 0.999992, -0.0001937]
+    encoder_offset_deg: -60
+                
+
+noise_model:
+    ranging_cov: 0.02
+    angle_cov: 0.1
+    # v2的硬件 imu cov调低一点效果好
+    #    acc_cov: 0.05
+    #    gyr_cov: 0.0025
+    acc_cov: 0.1
+    gyr_cov: 0.01
+    #    acc_cov: 1.0
+    #    gyr_cov: 0.5
+    b_acc_cov: 0.000043
+    b_gyr_cov: 0.00000266
+
+publish:
+    pub_voxel_map: false
+    publish_max_voxel_layer: 10         # only publish 0,1,2 layer's plane
+    path_en:  true
+    scan_publish_en:  true       # false: close all the point cloud output
+    dense_publish_en: true       # false: low down the points number in a global-frame point clouds scan.
+    scan_bodyframe_pub_en: true  # true: output the point cloud scans in IMU-body-frame
+    intensity_th: 0
+    publish_limit_z: 150
+    publish_dense_skip: 2
+
+pcd_save:
+    pcd_save_en: false
+    interval: -1                 # how many LiDAR frames saved in each pcd file; 
+                                 # -1 : all frames will be saved in ONE pcd file, may lead to memory crash when having too much frames.
