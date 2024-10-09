@@ -285,13 +285,12 @@ The `*.bag` files store the raw data (LiDAR point cloud, IMU and Encode messages
 
 # :scroll: III. Software Guideline
 
+> A step-by-step video tutorial for this section is available at https://www.youtube.com/watch?v=jFgedPY6zIM
 
 In this section, we demonstrate how to run and evaluate 𝛼LiDAR's core software module, which addresses 𝛼LiDAR' main challenges: accurately estimating the LiDAR's poses and recovering undistorted LiDAR measurements under the rapid motion of both the LiDAR and the carrier.
 
 We offer two methods for running the 𝛼LiDAR code: 
 [running with docker (we recommend)](#run-with-docker-recommended) and [building the source code from scratch](#build-source-from-scratch).
-
-A step-by-step video tutorial for this section is available at https://www.youtube.com/watch?v=jFgedPY6zIM
 
 ## Run with Docker (Recommended)
 
