@@ -291,7 +291,10 @@ In this section, we demonstrate how to run and evaluate 𝛼LiDAR's core softwar
 We offer two methods for running the 𝛼LiDAR code: 
 [running with docker (we recommend)](#run-with-docker-recommended) and [building the source code from scratch](#build-source-from-scratch).
 
+A step-by-step video tutorial for this section is available at https://www.youtube.com/watch?v=jFgedPY6zIM
+
 ## Run with Docker (Recommended)
+
 ### Prerequisites
 
 - Ubuntu 18.04 or later
