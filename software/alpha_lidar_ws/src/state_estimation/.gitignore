@@ -9,4 +9,3 @@ PCD/*.pcd
 .gitbak
 .idea
 cmake-build-debug
-scripts
