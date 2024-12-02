@@ -434,4 +434,4 @@ This repository is released under the MIT license. See [LICENSE](LICENSE) for ad
 
 # Acknowledgement
 
-Thanks Jinwen for teaching me how to design PCBs; Thanks Yuchen for helping me build the prototypes. 
+Thanks [@Jinwen](https://github.com/zhujinwen0924) for teaching me how to design PCBs; Thanks [@Yuchen](https://github.com) for helping me build the prototypes. 
