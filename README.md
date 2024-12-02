@@ -431,3 +431,7 @@ please refer to this section [2. Run and Evaluate](#2-run-and-evaluate) for deta
 
 # License
 This repository is released under the MIT license. See [LICENSE](LICENSE) for additional details.
+
+# Acknowledgement
+
+Thanks Jinwen for teaching me how to design PCBs; Thanks Yuchen for helping me build the prototypes. 
